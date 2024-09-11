@@ -34,7 +34,7 @@ class AppConstants {
   static const String adminPageUrl = 'https://admin.fo2odyman.org';
   static const String baseUrl = 'https://api.foodyman.org';
   static const String imageBaseUrl = '$baseUrl/storage/images';
-  static const String chatGpt = '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';
+  // static const String chatGpt = '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';
   static const String webUrl = 'https://foodyman.org';
 
 

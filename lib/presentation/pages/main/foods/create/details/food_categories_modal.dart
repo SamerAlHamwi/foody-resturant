@@ -43,36 +43,36 @@ class _FoodCategoriesModalState extends ConsumerState<FoodCategoriesModal> {
       body: Column(
         children: [
           const ModalDrag(),
-          if (!widget.isSubCategory)
-            GestureDetector(
-              onTap: () => AppHelpers.showCustomModalBottomSheet(
-                context: context,
-                paddingTop: 100,
-                modal: const AddCategoryModal(),
-                isDarkMode: false,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    FlutterRemix.play_list_add_line,
-                    color: Style.blueColor,
-                    size: 18.r,
-                  ),
-                  10.horizontalSpace,
-                  Text(
-                    AppHelpers.getTranslation(TrKeys.addNewCategory),
-                    style: Style.interSemi(
-                      size: 14,
-                      color: Style.blueColor,
-                      letterSpacing: -0.3,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          16.verticalSpace,
-          Divider(color: Style.toggleColor, height: 1.r, thickness: 1.r),
+          // if (!widget.isSubCategory)
+          //   GestureDetector(
+          //     onTap: () => AppHelpers.showCustomModalBottomSheet(
+          //       context: context,
+          //       paddingTop: 100,
+          //       modal: const AddCategoryModal(),
+          //       isDarkMode: false,
+          //     ),
+          //     child: Row(
+          //       mainAxisAlignment: MainAxisAlignment.center,
+          //       children: [
+          //         Icon(
+          //           FlutterRemix.play_list_add_line,
+          //           color: Style.blueColor,
+          //           size: 18.r,
+          //         ),
+          //         10.horizontalSpace,
+          //         Text(
+          //           AppHelpers.getTranslation(TrKeys.addNewCategory),
+          //           style: Style.interSemi(
+          //             size: 14,
+          //             color: Style.blueColor,
+          //             letterSpacing: -0.3,
+          //           ),
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // 16.verticalSpace,
+          // Divider(color: Style.toggleColor, height: 1.r, thickness: 1.r),
           24.verticalSpace,
           Expanded(
             child: Padding(

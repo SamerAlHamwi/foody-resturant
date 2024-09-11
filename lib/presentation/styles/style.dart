@@ -11,8 +11,8 @@ class Style {
   static const Color black = Color(0xFF232B2F);
   static const transparent = Colors.transparent;
   static const blueColor = Color(0xFF03758E);
-  static const primaryColor = Color(0xFFF13040);
-  static const greenColor = Color(0xFFC41F2A);
+  static const primaryColor = Color(0xFFEF1F20);
+  static const greenColor = Color(0xFFEF1F20);
   static const redColor = Color(0xFFFF3D00);
   static const starColor = Color(0xFFFFA100);
   static const textGrey = Color(0xFF898989);

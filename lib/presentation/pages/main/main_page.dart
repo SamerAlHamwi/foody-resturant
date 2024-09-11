@@ -133,8 +133,9 @@ class _MainPageState extends State<MainPage> {
                       ),
                     ),
                   ),
-                  state.selectedIndex != 2
-                      ? ButtonsBouncingEffect(
+                  // state.selectedIndex != 2
+                  //     ?
+                  ButtonsBouncingEffect(
                           child: Hero(
                             tag: AppConstants.heroTagAddOrderButton,
                             child: Consumer(
@@ -143,47 +144,59 @@ class _MainPageState extends State<MainPage> {
                                     ref.watch(foodTabsProvider);
                                 return GestureDetector(
                                   onTap: () {
-                                    state.selectedIndex == 0
-                                        ? context
-                                            .pushRoute(const CreateOrderRoute())
-                                        : (foodTabState.selectedIndex == 0
-                                            ? AppHelpers
-                                                .showCustomModalBottomSheet(
-                                                paddingTop:
-                                                    MediaQuery.of(context)
-                                                            .padding
-                                                            .top +
-                                                        64.h,
-                                                context: context,
-                                                modal:
-                                                    const CreateProductModal(),
-                                                isDarkMode: false,
-                                              )
-                                            : (foodTabState.selectedIndex == 1
-                                                ? AppHelpers
-                                                    .showCustomModalBottomSheet(
-                                                    paddingTop:
-                                                        MediaQuery.of(context)
-                                                                .padding
-                                                                .top +
-                                                            64.h,
-                                                    context: context,
-                                                    modal:
-                                                        const CreateAddonModal(),
-                                                    isDarkMode: false,
-                                                  )
-                                                : AppHelpers
-                                                    .showCustomModalBottomSheet(
-                                                    paddingTop:
-                                                        MediaQuery.of(context)
-                                                                .padding
-                                                                .top +
-                                                            64.h,
-                                                    context: context,
-                                                    modal:
-                                                        const CreateExtrasGroupModal(),
-                                                    isDarkMode: false,
-                                                  )));
+                                    AppHelpers
+                                        .showCustomModalBottomSheet(
+                                      paddingTop:
+                                      MediaQuery.of(context)
+                                          .padding
+                                          .top +
+                                          64.h,
+                                      context: context,
+                                      modal:
+                                      const CreateProductModal(),
+                                      isDarkMode: false,
+                                    );
+                                    // state.selectedIndex == 0
+                                    //     ? context
+                                    //         .pushRoute(const CreateOrderRoute())
+                                    //     : (foodTabState.selectedIndex == 0
+                                    //         ? AppHelpers
+                                    //             .showCustomModalBottomSheet(
+                                    //             paddingTop:
+                                    //                 MediaQuery.of(context)
+                                    //                         .padding
+                                    //                         .top +
+                                    //                     64.h,
+                                    //             context: context,
+                                    //             modal:
+                                    //                 const CreateProductModal(),
+                                    //             isDarkMode: false,
+                                    //           )
+                                    //         : (foodTabState.selectedIndex == 1
+                                    //             ? AppHelpers
+                                    //                 .showCustomModalBottomSheet(
+                                    //                 paddingTop:
+                                    //                     MediaQuery.of(context)
+                                    //                             .padding
+                                    //                             .top +
+                                    //                         64.h,
+                                    //                 context: context,
+                                    //                 modal:
+                                    //                     const CreateAddonModal(),
+                                    //                 isDarkMode: false,
+                                    //               )
+                                    //             : AppHelpers
+                                    //                 .showCustomModalBottomSheet(
+                                    //                 paddingTop:
+                                    //                     MediaQuery.of(context)
+                                    //                             .padding
+                                    //                             .top +
+                                    //                         64.h,
+                                    //                 context: context,
+                                    //                 modal:
+                                    //                     const CreateExtrasGroupModal(),
+                                    //                 isDarkMode: false,
+                                    //               )));
                                   },
                                   child: Container(
                                     margin:
@@ -205,7 +218,7 @@ class _MainPageState extends State<MainPage> {
                             ),
                           ),
                         )
-                      : const SizedBox.shrink()
+                      // : const SizedBox.shrink()
                 ],
               );
             },

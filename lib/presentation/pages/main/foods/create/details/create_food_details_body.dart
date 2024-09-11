@@ -211,7 +211,7 @@ class _CreateFoodDetailsBodyState extends State<CreateFoodDetailsBody> {
                               categoryId: categoryState
                                   .categories[categoryState.activeIndex].id,
                               unitId: unitState.units[unitState.activeIndex].id,
-                              kitchenId: kitchenState.kitchens[kitchenState.activeIndex].id,
+                              kitchenId: kitchenState.kitchens.isNotEmpty ? kitchenState.kitchens[kitchenState.activeIndex].id : null,
                               created: () {
                             widget.onSave();
                             AppHelpers.showCheckTopSnackBar(

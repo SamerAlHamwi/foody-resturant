@@ -1,9 +1,11 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_remix/flutter_remix.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../routes/app_router.dart';
 import '../../../styles/style.dart';
 import 'widgets/new_orders_body.dart';
 import 'widgets/ready_orders_body.dart';
@@ -138,37 +140,39 @@ class _OrdersHomePageState extends ConsumerState<OrdersHomePage>
               child: GestureDetector(
                 onTap: () {},
                 child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.end,
-                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Container(
-                      decoration: const BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: Style.greyColor,
-                      ),
-                      padding: REdgeInsets.all(12),
-                      child: Icon(
-                        FlutterRemix.dashboard_3_line,
-                        size: 20.r,
-                        color: Style.blackColor,
-                      ),
-                    ),
-                    10.horizontalSpace,
-                    Consumer(
-                      builder: (context, ref, child) {
-                        final state = ref.watch(homeAppbarProvider);
-                        return Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            Text(
-                              state.title.isEmpty
-                                  ? AppHelpers.getTranslation(TrKeys.newOrders)
-                                  : state.title,
-                              style: Style.interNormal(size: 12.sp),
-                            ),
-                            Row(
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Style.greyColor,
+                          ),
+                          padding: REdgeInsets.all(12),
+                          child: Icon(
+                            FlutterRemix.restaurant_2_line,
+                            size: 20.r,
+                            color: Style.blackColor,
+                          ),
+                        ),
+                        10.horizontalSpace,
+                        Consumer(
+                          builder: (context, ref, child) {
+                            final state = ref.watch(homeAppbarProvider);
+                            return Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
                               children: [
+                                Text(
+                                  state.title.isEmpty
+                                      ? AppHelpers.getTranslation(TrKeys.newOrders)
+                                      : state.title,
+                                  style: Style.interNormal(size: 16.sp),
+                                ),
                                 Text(
                                   '${state.totalCount} ${AppHelpers.getTranslation(TrKeys.orders).toLowerCase()}',
                                   style: Style.interSemi(
@@ -176,16 +180,44 @@ class _OrdersHomePageState extends ConsumerState<OrdersHomePage>
                                     color: Style.blackColor,
                                   ),
                                 ),
-                                Icon(
-                                  Icons.keyboard_arrow_down,
-                                  color: Style.blackColor,
-                                  size: 20.r,
-                                ),
                               ],
-                            ),
-                          ],
-                        );
-                      },
+                            );
+                          },
+                        ),
+
+                      ],
+                    ),
+                    Row(
+                      children: [
+                        IconButton(
+                          onPressed: (){
+                            context.pushRoute(const NotificationListRoute());
+                          },
+                          icon: Icon(
+                            FlutterRemix.notification_2_line,
+                            size: 20.r,
+                            color: Style.blackColor,
+                          ),
+                        ),
+                        IconButton(
+                            onPressed: (){
+
+                            },
+                            icon: Container(
+                              width: 40,
+                              height: 40,
+                              decoration: const BoxDecoration(
+                                  color: Style.primaryColor,
+                                  shape: BoxShape.circle
+                              ),
+                              child: Icon(
+                                FlutterRemix.car_line,
+                                size: 20.r,
+                                color: Style.blackColor,
+                              ),
+                            )
+                        ),
+                      ],
                     )
                   ],
                 ),

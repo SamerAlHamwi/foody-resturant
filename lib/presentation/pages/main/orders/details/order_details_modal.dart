@@ -36,6 +36,9 @@ class OrderDetailsModal extends ConsumerStatefulWidget {
 }
 
 class _OrderDetailsModalState extends ConsumerState<OrderDetailsModal> {
+
+  int cookingTime = 0;
+
   @override
   void initState() {
     super.initState();
@@ -474,6 +477,62 @@ class _OrderDetailsModalState extends ConsumerState<OrderDetailsModal> {
                       ],
                     ),
                   ),
+                  AppHelpers.getOrderStatus(state.order?.status) == OrderStatus.newOrder ? Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      12.verticalSpace,
+                      Row(
+                        children: [
+                          Text(
+                            AppHelpers.getTranslation("Cooking time"),
+                            style: Style.interNormal(
+                              size: 15.sp,
+                            ),
+                          ),
+                          Row(
+                            children: [
+                              IconButton(
+                                onPressed: (){
+                                  if(cookingTime > 0){
+                                    setState(() {
+                                      cookingTime--;
+                                    });
+                                  }
+                                },
+                                icon: const Icon(
+                                  Icons.remove,
+                                  color: Style.black,
+                                ),
+                              ),
+                              Text(
+                                cookingTime.toString(),
+                                style: Style.interNormal(
+                                  size: 16.sp,
+                                ),
+                              ),
+                              IconButton(
+                                onPressed: (){
+                                  setState(() {
+                                    cookingTime++;
+                                  });
+                                },
+                                icon: const Icon(Icons.add),
+                              ),
+                            ],
+                          ),
+                          Text(
+                            AppHelpers.getTranslation("minute"),
+                            style: Style.interNormal(
+                              size: 14.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                      8.verticalSpace,
+                    ],
+                  )
+                      : const SizedBox(),
+                  8.verticalSpace,
                   isHistoryOrder
                       ? const SizedBox.shrink()
                       : Column(

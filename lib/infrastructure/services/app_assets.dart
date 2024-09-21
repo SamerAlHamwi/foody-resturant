@@ -10,6 +10,7 @@ class AppAssets {
   static const String pngLogo = '$_pngPath/logo.png';
   static const String pngNoOrders = '$_pngPath/no_orders.png';
   static const String imageMarker = '$_pngPath/marker.png';
+  static const String deliveryImage = '$_pngPath/delivery-bike.png';
 
   /// svg
   static const String svgMenu = '$_svgPath/menu.svg';

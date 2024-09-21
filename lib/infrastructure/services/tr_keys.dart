@@ -254,5 +254,9 @@ class TrKeys {
   static const String pleaseTryAgain = 'your_request_rejected_please_try_again';
   static const String note = 'note';
   static const String getDriver = 'get_driver';
+  static const String cookingTime = 'cooking_time';
+  static const String minute = 'minute';
+  static const String submit = 'Submit';
+  static const String extraDeliveryPrice = 'extra_delivery_price';
 
 }

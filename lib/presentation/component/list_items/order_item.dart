@@ -86,7 +86,37 @@ class OrderItem extends StatelessWidget {
                       height: 10.r,
                       decoration: const BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Style.redColor,
+                        color: Style.pendingDark,
+                      ),
+                    ),
+                  if (AppHelpers.getOrderStatus(order.status) ==
+                      OrderStatus.accepted)
+                    Container(
+                      width: 10.r,
+                      height: 10.r,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Colors.green,
+                      ),
+                    ),
+                  if (AppHelpers.getOrderStatus(order.status) ==
+                      OrderStatus.ready)
+                    Container(
+                      width: 10.r,
+                      height: 10.r,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Style.primaryColor,
+                      ),
+                    ),
+                  if (AppHelpers.getOrderStatus(order.status) ==
+                      OrderStatus.onAWay)
+                    Container(
+                      width: 10.r,
+                      height: 10.r,
+                      decoration: const BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: Style.blueColor,
                       ),
                     ),
                   if (isHistoryOrder)
